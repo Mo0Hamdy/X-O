@@ -31,7 +31,7 @@ divs.forEach((div, index) => {
         if (compare(xarr)) {
           divState = true;
           result.style.cssText = `visibility:visible;`;
-          result.innerHTML = `player<span style="color:#00aaff;padding:5px;font-weight:bold;">X</span>is the winner`;
+          result.innerHTML = `player <span style="color:#00aaff;">X</span> is the winner`;
           coloring();
         }
         if (counter === 9 || divState) {
@@ -45,7 +45,7 @@ divs.forEach((div, index) => {
         if (compare(oarr)) {
           divState = true;
           result.style.cssText = `visibility:visible;`;
-          result.innerHTML = `player<span style="color:#ff4081;padding:5px;font-weight:bold;">O</span>is the winner`;
+          result.innerHTML = `player<span style="color:#ff4081;">O</span>is the winner`;
           coloring();
         }
         if (counter === 9 || divState) {

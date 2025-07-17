@@ -262,6 +262,7 @@ button:hover {
   }
   .result {
     bottom: 17%;
+    font-size: 15px;
   }
   button {
     padding: 10px 20px;
@@ -273,4 +274,8 @@ button:hover {
   .sign span i {
     font-size: 14px;
   }
+}
+.result span {
+  padding: 5px;
+  font-weight: bold;
 }
