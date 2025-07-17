@@ -1,0 +1,160 @@
+$small_dimension: 80px;
+$medium_dimension: 130px;
+$large_dimension: 160px;
+$main_color: cyan;
+$second_color: #333333;
+$transition_time: 1s;
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%xalign {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+@mixin grid($dimension) {
+  display: grid;
+  grid-template-columns: repeat(3, $dimension);
+  grid-template-rows: repeat(3, $dimension);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+}
+
+.row {
+  @extend %xalign;
+  top: 50%;
+  margin: 0;
+  transform: translate(50%, -50%);
+
+  div {
+    @extend %center;
+    background-color: $second_color;
+    border: 1px solid $main_color;
+  }
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 20px;
+  position: absolute;
+  background-color: #0c6ffded;
+  color: white;
+  box-shadow: 0 0 10px #0c6ffded;
+  bottom: 5%;
+  right: 10%;
+  transition-duration: $transition_time;
+}
+
+button:hover {
+  background-color: #00e6b8;
+  box-shadow: 0 0 10px #00e6b8;
+  color: white;
+}
+
+.sign {
+  @extend %xalign;
+  display: flex;
+  top: 15%;
+  span {
+    transition: 0.5s;
+    i {
+      color: white !important;
+    }
+  }
+}
+
+.active {
+  background-color: #0c6ffded;
+  color: white;
+}
+
+.result {
+  @extend %center;
+  @extend %xalign;
+  padding: 8px;
+  visibility: hidden;
+  border-radius: 10px;
+  background-color: $second_color;
+  color: $main_color;
+  width: fit-content;
+  height: 70px;
+  transition: $transition_time;
+}
+
+@media (min-width: 992px) {
+  .row {
+    @include grid($large_dimension);
+    div {
+      font-size: 30px;
+    }
+  }
+  .result {
+    bottom: 15%;
+  }
+  .sign {
+    top: 15%;
+    span {
+      padding: 10px 40px;
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .row {
+    @include grid($medium_dimension);
+    div {
+      font-size: 25px;
+    }
+  }
+  .result {
+    bottom: 15%;
+  }
+  .sign {
+    span {
+      padding: 10px 30px;
+    }
+    i {
+      font-size: 17px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    @include grid($small_dimension);
+    div {
+      font-size: 20px;
+    }
+  }
+  .result {
+    bottom: 17%;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  .sign {
+    span {
+      padding: 5px 20px;
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+}
