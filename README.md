@@ -44,7 +44,7 @@ A responsive X-O game built with HTML, SCSS, and Vanilla JavaScript. The game al
 
 ## 📸 Screenshots
 
-_![live game](image.png)_
+![live game](image.png)
 
 
 ## 👨‍💻 Author
